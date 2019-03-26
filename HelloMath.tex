@@ -1,0 +1,26 @@
+% comment
+
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\section{Probability} \label{prob}
+We can also display math. This uses the amsmath and the amssymb packages. We also introduce the Section, and this is Section \ref{prob}.
+
+This is the product rule:
+\[
+p(x,y) = p(x)p(y|x)
+\]
+
+The joint probability $p(x,y)$ equals $p(x)$ times $p(y|x)$. Thus,
+\[ p(x) = \frac{p(x,y)}{p(y|x)}. \]
+
+We can also write the sum rule:
+\[
+	p(x) = \sum_{y\in \mathcal{Y}} p(x,y)
+\]
+
+\end{document}

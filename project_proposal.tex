@@ -1,0 +1,87 @@
+\documentclass[twoside,11pt]{article}
+
+% Any additional packages needed should be included after jmlr2e.
+% Note that jmlr2e.sty includes epsfig, amssymb, natbib and graphicx,
+% and defines many common macros, such as 'proof' and 'example'.
+%
+% It also sets the bibliographystyle to plainnat; for more information on
+% natbib citation styles, see the natbib documentation, a copy of which
+% is archived at http://www.jmlr.org/format/natbib.pdf
+
+\usepackage{jmlr2e}
+%\usepackage{parskip}
+
+% Definitions of handy macros can go here
+\newcommand{\dataset}{{\cal D}}
+\newcommand{\fracpartial}[2]{\frac{\partial #1}{\partial  #2}}
+% Heading arguments are {volume}{year}{pages}{submitted}{published}{author-full-names}
+
+% Short headings should be running head and authors last names
+\ShortHeadings{95-845: AAMLP Proposal}{Lastname and Lastname}
+\firstpageno{1}
+
+\begin{document}
+
+\title{Heinz 95-845: Project Proposal\\Teaching Machine To sing}
+
+\author{\name Jiayong Hu \email jiayongh/jiayongh@andrew.cmu.edu \\
+       \addr Civil and Environmental Engineering\\
+       Carnegie Mellon University\\
+       Pittsburgh, PA, United States \\
+       \AND
+       \name Hao Wu \email haowu2/haowu2@andrew.cmu.edu \\
+       \addr Civil and Environmental Engineering\\
+       Carnegie Mellon University\\
+       Pittsburgh, PA, United States \\
+       \AND
+       \name Nicholas Wells \email nwells/nwells@andrew.cmu.edu \\
+       \addr Heinz College of Information Systems and Public Policy\\
+       Carnegie Mellon University\\
+       Pittsburgh, PA, United States}
+\maketitle
+
+\section{Proposal Details (10 points)} \label{details}
+Please provide information for the following fields. Your proposal write-up should be no more than 2 pages.
+
+\subsection{What is your proposed analysis? What are the likely outcomes?}
+Our proposed project is to generate vocal music by using neural network. The expected outcomes should sound like curtain singers’ work.
+
+\subsection{Why is your proposed analysis important?}
+The machine learning in music is such a popular topic that it has various applications and researches, including music recommendation, melody prediction, music generator and etc. Our project focusing on song generator may contribute to the understanding of audio recognition and classification. Moreover, music creators will find an easier way to make vocal music if we are able to construct a sophisticated neural network.
+
+\subsection{How will your analysis contribute to existing work? Provide references, \emph{e.g.}, see: \cite{cite1}.}
+There are countless projects on music generator, which all seem to divide a song into pure music and lyrics. It certainly makes sense since lyrics don’t only follow rhythm but also provide meanings. However, there might be an alternative for professional music creators.\\
+What enlightened us is the idea of “mumble rappers”. One definition of “mumble rappers” is the rappers whose lyrics were unclear, which is also the basic idea of our model. By feeding one singer’s vocal music into our neural networks, we expect the models to be able to generate a song with the same style and audio similar to unclear lyrics.\\ 
+Although the words “mumble rappers” have become pejorative recently, our “mumble singers” might be a great gift for music industry. A professional music creator can first generate a sample song using our models, then write meaningful lyrics corresponding to the unclear voices, and eventually make a real song by inserting the lyrics and final tuning. 
+
+\subsection{Describe the data. Where applicable, please also define Y outcome(s), U treatment, V covariates, and W population.}
+The data we intend to use are all the songs of one singer or songs with similar style. Mixing different music styles such as EDM and country music is beyond our project area. All songs must be vocal music.
+
+
+\subsection{What evaluation measures are appropriate for the analysis? Which measures will you use?}
+Although it is difficult to quantitatively evaluate the model, a subjective evaluation is possible by listening to the samples it produces. We will train our model to minimize the mean squared errors (MSE) of accompaniment and original music and evaluate the model using mean opinion scores(MOS).\\
+In the MOS tests, 10 songs not included in the training data will be used for evaluation. After listening to each stimulus, our team members will be asked to rate the naturalness of the stimulus in a five-point Likert scale score (1: Bad, 2: Poor, 3: Fair, 4: Good, 5: Excellent).\\
+For different models, we will conduct subjective preference experiment. Our team members will be asked to choose their preference from 10×n stimulus which are generated from a same accompaniment and n different models.
+
+
+\subsection{What study design, pre-processing, and machine learning methods do you intend to use? Justify that the analysis is of appropriate size for a course project.}
+
+\subsection{What are possible limitations of the study?}
+Because our input is simply audio and there is no semantic information passed through our algorithm, the output can be “meaningless”. And the quality of the stimulus is to be checked.
+
+\subsection{Who will use your analytic pipeline? In one or two sentences, describe an example of its use.}
+With this pipeline, everyone can ‘teach’ machine to sing like certain singer.\\
+Step1: Load audio files\\
+Pre-process the audio data, extract MFCC features(Including original and accompaniment).\\
+Step2: Use deep net to further extract information\\
+CNN/RNN/LSTM\\
+Step3: Use the information to Generate music\\
+GAN/PixelRNN/PixelCNN(van den Oord et al., 2016a)/WaveNet(Google DeepMind, 2016)\\\
+
+
+\bibliography{sample.bib}
+%\appendix
+%\section*{Appendix A.}
+%Some more details about those methods, so we can actually reproduce them.
+
+\end{document}
