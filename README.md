@@ -2,7 +2,7 @@
 
 The repository is for AAMLP term project.
 
-PixelCNN model to generate music in this repository.
+PixelCNN model to generate music in this repository. Result still noisy, trying new feature engineering and loss function.
 
 See [GAN to generate vocal music](https://github.com/BigT0e/GANs-for-generating-songs) here.
 
